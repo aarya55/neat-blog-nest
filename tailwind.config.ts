@@ -60,6 +60,17 @@ export default {
 					DEFAULT: 'hsl(var(--card))',
 					foreground: 'hsl(var(--card-foreground))'
 				},
+				corporate: {
+					primary: '#1e40af',   // Blue 800
+					secondary: '#3b82f6', // Blue 500
+					accent: '#dbeafe',    // Blue 100
+					light: '#f1f5f9',     // Slate 100
+					dark: '#1e293b',      // Slate 800
+					muted: '#64748b',     // Slate 500
+					success: '#10b981',   // Emerald 500
+					warning: '#f59e0b',   // Amber 500
+					danger: '#ef4444',    // Red 500
+				},
 				sidebar: {
 					DEFAULT: 'hsl(var(--sidebar-background))',
 					foreground: 'hsl(var(--sidebar-foreground))',
@@ -113,9 +124,9 @@ export default {
 						maxWidth: '65ch',
 						color: '#333',
 						a: {
-							color: '#6E59A5',
+							color: '#1e40af',
 							'&:hover': {
-								color: '#7E69AB',
+								color: '#3b82f6',
 							},
 						},
 						h1: {
