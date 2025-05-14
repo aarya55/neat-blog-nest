@@ -7,6 +7,7 @@ import BlogPostHeader from "@/components/BlogPostHeader";
 import AuthorBio from "@/components/AuthorBio";
 import { getBlogPostById, getLatestBlogPosts } from "@/data/blogPosts";
 import BlogCard from "@/components/BlogCard";
+import { marked } from "marked";
 
 const BlogPost = () => {
   const { id } = useParams<{ id: string }>();
@@ -71,37 +72,6 @@ const BlogPost = () => {
       <Footer />
     </div>
   );
-};
-
-// Simple markdown parser function
-const marked = (markdown: string) => {
-  // Convert headers
-  let html = markdown
-    .replace(/^# (.*$)/gm, '<h1>$1</h1>')
-    .replace(/^## (.*$)/gm, '<h2>$1</h2>')
-    .replace(/^### (.*$)/gm, '<h3>$1</h3>')
-    .replace(/^#### (.*$)/gm, '<h4>$1</h4>')
-    .replace(/^##### (.*$)/gm, '<h5>$1</h5>')
-    .replace(/^###### (.*$)/gm, '<h6>$1</h6>');
-
-  // Convert paragraphs
-  html = html.replace(/^\s*(\n)?(.+)/gm, function(m) {
-    return /^<(\/)?(h\d|ul|ol|li|blockquote|pre|img)/.test(m) ? m : '<p>' + m + '</p>';
-  });
-  
-  // Convert bold and italics
-  html = html
-    .replace(/\*\*(.*)\*\*/gm, '<strong>$1</strong>')
-    .replace(/\*(.*)\*/gm, '<em>$1</em>')
-    .replace(/\n/g, '<br />');
-  
-  // Convert lists
-  html = html
-    .replace(/^\s*\n\*\s/gm, '<ul>\n* ')
-    .replace(/^(\*\s.+)\s*\n([^\*])/gm, '$1\n</ul>\n$2')
-    .replace(/^\*\s(.+)/gm, '<li>$1</li>');
-    
-  return html.trim();
 };
 
 export default BlogPost;
