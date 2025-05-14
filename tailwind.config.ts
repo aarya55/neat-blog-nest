@@ -26,11 +26,11 @@ export default {
 				background: 'hsl(var(--background))',
 				foreground: 'hsl(var(--foreground))',
 				blog: {
-					primary: '#e1e1e1',
-					accent: '#8a70d6',
-					muted: '#a0a3a8',
-					light: '#1e1e1e',
-					background: '#121212',
+					primary: '#333333',
+					accent: '#6E59A5',
+					muted: '#8E9196',
+					light: '#F6F6F7',
+					background: '#FFFFFF',
 				},
 				primary: {
 					DEFAULT: 'hsl(var(--primary))',
@@ -111,24 +111,18 @@ export default {
 				DEFAULT: {
 					css: {
 						maxWidth: '65ch',
-						color: '#e1e1e1',
+						color: '#333',
 						a: {
-							color: '#8a70d6',
+							color: '#6E59A5',
 							'&:hover': {
-								color: '#9a80e6',
+								color: '#7E69AB',
 							},
 						},
 						h1: {
 							fontWeight: '700',
-							color: '#ffffff',
 						},
 						h2: {
 							fontWeight: '600',
-							color: '#ffffff',
-						},
-						code: {
-							color: '#e1e1e1',
-							backgroundColor: '#2a2a2a',
 						},
 					},
 				},
