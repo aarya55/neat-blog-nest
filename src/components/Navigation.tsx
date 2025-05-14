@@ -13,7 +13,7 @@ const Navigation = () => {
   };
 
   return (
-    <header className="border-b border-gray-200 bg-white sticky top-0 z-50">
+    <header className="border-b border-gray-200 bg-white/95 backdrop-blur-sm sticky top-0 z-50 shadow-sm">
       <div className="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
         <Link to="/" className="flex items-center space-x-2">
           <Building2 className="h-6 w-6 text-blue-600" />
@@ -40,7 +40,7 @@ const Navigation = () => {
       {/* Mobile Navigation */}
       <div
         className={cn(
-          "md:hidden fixed inset-x-0 top-[65px] bg-white border-b border-gray-200 z-50 transition-all duration-300 ease-in-out transform",
+          "md:hidden fixed inset-x-0 top-[65px] bg-white/95 backdrop-blur-sm border-b border-gray-200 z-50 transition-all duration-300 ease-in-out transform shadow-md",
           isMenuOpen ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-full pointer-events-none"
         )}
       >
@@ -68,8 +68,8 @@ const NavLink = ({
   <Link
     to={to}
     className={cn(
-      "text-gray-800 hover:text-blue-600 transition-colors font-medium",
-      isActive && "text-blue-600 font-semibold",
+      "text-gray-800 hover:text-blue-600 transition-colors font-medium relative after:content-[''] after:absolute after:w-full after:scale-x-0 after:h-0.5 after:bottom-0 after:left-0 after:bg-blue-600 after:origin-bottom-right after:transition-transform after:duration-300 hover:after:scale-x-100 hover:after:origin-bottom-left",
+      isActive && "text-blue-600 font-semibold after:scale-x-100 after:bg-blue-600",
       className
     )}
   >

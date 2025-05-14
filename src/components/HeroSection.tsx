@@ -26,15 +26,15 @@ const HeroSection = ({
           alt="Corporate background"
           className="w-full h-full object-cover"
         />
-        <div className="absolute inset-0 bg-black/60"></div>
+        <div className="absolute inset-0 bg-gradient-to-br from-blue-900/80 to-purple-900/80"></div>
       </div>
       
       {/* Content */}
       <div className="relative max-w-6xl mx-auto px-4 py-20 md:py-28 flex flex-col items-center text-center">
-        <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">{title}</h1>
-        <p className="text-xl max-w-2xl mb-8 text-gray-200">{subtitle}</p>
-        <Link to={ctaLink}>
-          <Button size="lg" className="bg-blue-600 hover:bg-blue-700">
+        <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 fade-in">{title}</h1>
+        <p className="text-xl max-w-2xl mb-8 text-gray-100 slide-in">{subtitle}</p>
+        <Link to={ctaLink} className="scale-in">
+          <Button size="lg" className="bg-gradient-to-r from-blue-500 to-indigo-600 hover:from-blue-600 hover:to-indigo-700 border-0 shadow-lg">
             {ctaText}
           </Button>
         </Link>
